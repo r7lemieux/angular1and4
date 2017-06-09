@@ -1,6 +1,6 @@
 import {HeroService} from './heroesService';
 import {Hero} from './hero';
-import { ILocationService, IScope } from 'angularjs';
+import { ILocationService, IScope } from 'angular';
 
 export class HeroesController {
   public heroes: Hero[];
