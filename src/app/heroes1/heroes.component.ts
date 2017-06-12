@@ -2,7 +2,7 @@ import {HeroService} from './heroesService';
 import {Hero} from './hero';
 import { ILocationService, IScope } from 'angular';
 
-export class HeroesController {
+export class HeroesComponent {
   public heroes: Hero[];
   public selectedHero: Hero;
 

@@ -90,10 +90,7 @@
       true,
       {
         "call-signature": "nospace",
-        "index-signature": "nospace",
-        "parameter": "nospace",
-        "property-declaration": "nospace",
-        "variable-declaration": "nospace"
+        "index-signature": "nospace"
       }
     ],
     "typeof-compare": true,
