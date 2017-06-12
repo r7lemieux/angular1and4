@@ -1,7 +1,10 @@
+import './heroModule';
+import {heroModule} from './heroModule';
 import {HEROES} from './mock-heroes';
 import {Hero} from './hero';
+import * as angularjs from 'angular';
 
-export class HeroService {
+export class HeroesService {
   getHeroes() {
     return Promise.resolve(HEROES);
   }
@@ -13,3 +16,5 @@ export class HeroService {
       })[0]});
   }
 }
+
+heroModule.service('heroesService', HeroesService)

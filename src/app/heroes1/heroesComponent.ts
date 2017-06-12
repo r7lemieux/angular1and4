@@ -1,6 +1,10 @@
-import {HeroService} from './heroesService';
+import './heroModule';
+import './heroesService';
+import {HeroesService} from './heroesService';
 import {Hero} from './hero';
 import { ILocationService, IScope } from 'angular';
+
+declare let angular;
 
 export class HeroesComponent {
   public heroes: Hero[];
@@ -8,8 +12,8 @@ export class HeroesComponent {
 
   constructor(
     $scope: IScope,
-    private _HeroService_: HeroService,
-    private _$location_: ILocationService
+    protected heroesService: HeroesService,
+    protected $location: ILocationService
   ) {
     this.heroes = this.getHeroes();
   }
@@ -18,7 +22,7 @@ export class HeroesComponent {
     this.selectedHero = undefined;
     this.heroes = [];
 
-    this._HeroService_.getHeroes()
+    this.heroesService.getHeroes()
       .then((heroes: Hero[]) => this.heroes = heroes);
 
     return this.heroes;
@@ -29,11 +33,20 @@ export class HeroesComponent {
   }
 
   gotoDetail() {
-    this._$location_.path('detail/' + this.selectedHero.id);
+    this.$location.path('detail/' + this.selectedHero.id);
   }
 
   onSelect(hero: Hero) {
     this.selectedHero = hero;
   }
 }
+
+angular.module('hero').component('heroes1', {
+  templateUrl: './heroesComponent.html',
+  bindings: {
+  },
+  controller: HeroesComponent,
+  controllerAs: 'vm'
+});
+
 
