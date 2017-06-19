@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
 
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
@@ -17,21 +16,22 @@ export class HeroDetailComponent implements OnInit {
 
   constructor(
     private heroService: HeroService,
-    private route: ActivatedRoute) {
+    // private route: ActivatedRoute
+  ) {
   }
 
   ngOnInit(): void {
-    this.route.params.forEach((params: Params) => {
-      if (params['id'] !== undefined) {
-        const id = +params['id'];
-        this.navigated = true;
-        this.heroService.getHero(id)
-            .then(hero => this.hero = hero);
-      } else {
-        this.navigated = false;
-        this.hero = new Hero();
-      }
-    });
+    // this.route.params.forEach((params: Params) => {
+    //   if (params['id'] !== undefined) {
+    //     const id = +params['id'];
+    //     this.navigated = true;
+    //     this.heroService.getHero(id)
+    //         .then(hero => this.hero = hero);
+    //   } else {
+    //     this.navigated = false;
+    //     this.hero = new Hero();
+    //   }
+    // });
   }
 
   save(): void {

@@ -8,7 +8,6 @@ import { UIRouterModule } from '@uirouter/angular';
 import { UIRouterUpgradeModule } from '@uirouter/angular-hybrid';
 
 import {AppComponent} from './app.component';
-import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './angular2-router.config';
 
 // Create a "future state" (a placeholder) for the Contacts
@@ -29,9 +28,8 @@ export function getContactsService($injector) {
 
 // The main NgModule for the Angular portion of the hybrid app
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
+  entryComponents: [AppComponent],
   imports: [
     BrowserModule,
     // Provide angular upgrade capabilities

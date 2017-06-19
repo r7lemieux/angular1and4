@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
@@ -13,7 +12,6 @@ export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
 
   constructor(
-    private router: Router,
     private heroService: HeroService) {
   }
 
@@ -24,6 +22,6 @@ export class DashboardComponent implements OnInit {
 
   gotoDetail(hero: Hero): void {
     const link = ['/detail', hero.id];
-    this.router.navigate(link);
+    // this.router.navigate(link);
   }
 }
