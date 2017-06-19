@@ -9,7 +9,7 @@ export class DashboardComponent {
 
 }
 
-angularjs.module('app').component('dashboard', {
+angularjs.module('app').component('dashboard1', {
   bindings: {
   },
   controller: DashboardComponent,

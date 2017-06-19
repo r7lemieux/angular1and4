@@ -3,8 +3,7 @@ import './heroesService';
 import {HeroesService} from './heroesService';
 import {Hero} from './hero';
 import { ILocationService, IScope } from 'angular';
-
-declare let angular;
+import * as angular from 'angular';
 
 export class HeroesComponent {
   public heroes: Hero[];
@@ -33,7 +32,7 @@ export class HeroesComponent {
   }
 
   gotoDetail() {
-    this.$location.path('detail/' + this.selectedHero.id);
+    this.$location.path('detail1/' + this.selectedHero.id);
   }
 
   onSelect(hero: Hero) {
